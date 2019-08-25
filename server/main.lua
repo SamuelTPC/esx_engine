@@ -11,7 +11,7 @@ ESX.RegisterUsableItem('pliers', function(source)
 
 	xPlayer.removeInventoryItem('pliers', 1)
 
-	TriggerClientEvent('esx_engine:killEngineWP', _source)
+	TriggerClientEvent('esx_engine:killEngine', _source)
     TriggerClientEvent('esx:showNotification', _source, _U('used_pliers'))
     end
 end)
