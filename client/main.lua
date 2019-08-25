@@ -7,8 +7,8 @@ Citizen.CreateThread(function()
 	end
 end)
         
-    RegisterNetEvent('esx_engine:killEngineWP')
-    AddEventHandler('esx_engine:killEngineWP', function()
+    RegisterNetEvent('esx_engine:killEngine')
+    AddEventHandler('esx_engine:killEngine', function()
         local ped = PlayerPedId()
         local vehicle = GetVehiclePedIsIn(ped, false)
         exports['progressBars']:startUI(15000, "A cortar os fios do carro...")
