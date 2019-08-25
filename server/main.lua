@@ -2,22 +2,16 @@ ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
-ESX.RegisterServerCallback('esx_engine:killEngine', function(source, cb)
-
-    local xPlayer = ESX.GetPlayerFromId(source)
-    local items   = xPlayer.getInventoryItem('pliers')
+ESX.RegisterUsableItem('pliers', function(source)
+	local _source = source
+    local xPlayer = ESX.GetPlayerFromId(_source)
     local hasitem = xPlayer.getInventoryItem('pliers').count
 
+    if hasitem >= 1 then
 
-    cb({
-        items = items
-    })
+	xPlayer.removeInventoryItem('pliers', 1)
 
-if hasitem >= 1 then
-TriggerClientEvent('esx:showNotification', source, _U('used_pliers'))
-xPlayer.removeInventoryItem('pliers', 1)
-else
-TriggerClientEvent('esx:showNotification', source, _U('you_dont_have_pliers'))
-end
-
+	TriggerClientEvent('esx_engine:killEngineWP', _source)
+    TriggerClientEvent('esx:showNotification', _source, _U('used_pliers'))
+    end
 end)

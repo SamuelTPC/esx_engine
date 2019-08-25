@@ -6,13 +6,16 @@ I made this script for fun. With this script you basically can kill your friends
 #Items
 - pliers
 
-#Codes
-- /killengine - kill the car engine
+# How to use
+- Just go to your inventory and use the item
 
 # Installation
 - Dowanload this script
 - Put the script in your base
 - Start this script in your `server.cfg` and put the sql fille in your `db`
+
+# github
+https://github.com/SamuelGamerPT
 
 # Legal
 ### License
